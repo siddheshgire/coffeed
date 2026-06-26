@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-cream-50 text-espresso-800 font-sans antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-espresso-900;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cream-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-espresso-300 rounded-full border-2 border-cream-100 hover:bg-espresso-400 transition-colors duration-200;
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+  @apply backdrop-blur-md bg-cream-50/75 border-b border-cream-200/50;
+}
+
+.glass-card {
+  @apply backdrop-blur-sm bg-white/70 border border-white/60 shadow-soft hover:shadow-premium transition-all duration-300;
+}
+
+.glass-dark-card {
+  @apply backdrop-blur-md bg-espresso-900/90 border border-espresso-800/40 shadow-premium;
+}
+
+/* Custom hover state for images */
+.zoom-hover {
+  @apply overflow-hidden;
+}
+.zoom-hover img {
+  @apply transition-transform duration-700 ease-out;
+}
+.zoom-hover:hover img {
+  @apply scale-110;
+}
+
+/* Utility for custom selection */
+::selection {
+  @apply bg-matcha-200 text-espresso-900;
+}
